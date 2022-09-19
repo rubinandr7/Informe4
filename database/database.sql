@@ -1,0 +1,24 @@
+CREATE DATABASE ng_informe;
+
+USE ng_informe;
+
+CREATE TABLE Usuarios(
+    regac INT(9) NOT NULL PRIMARY KEY,
+    nombres VARCHAR(180) NOT NULL,
+    apellidos VARCHAR(180) NOT NULL,
+    contrasenia VARCHAR(150) NOT NULL,
+    correo VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE Cursos(
+    id INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    curso VARCHAR(180) NOT NULL,
+    catedratico VARCHAR(180) NOT NULL
+);
+
+CREATE TABLE Publicaciones(
+    user VARCHAR(180) NOT NULL,
+    cuOca VARCHAR(180) NOT NULL,
+    mensaje TEXT NOT NULL,
+    fecha DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
