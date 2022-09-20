@@ -1,8 +1,4 @@
-CREATE DATABASE ng_informe;
-
-USE ng_informe;
-
-CREATE TABLE Usuarios(
+CREATE TABLE usuarios(
     regac INT(9) NOT NULL PRIMARY KEY,
     nombres VARCHAR(180) NOT NULL,
     apellidos VARCHAR(180) NOT NULL,
@@ -10,15 +6,17 @@ CREATE TABLE Usuarios(
     correo VARCHAR(200) NOT NULL
 );
 
-CREATE TABLE Cursos(
+CREATE TABLE cursos(
     id INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     curso VARCHAR(180) NOT NULL,
     catedratico VARCHAR(180) NOT NULL
 );
 
-CREATE TABLE Publicaciones(
+CREATE TABLE publicaciones(
     user VARCHAR(180) NOT NULL,
     cuOca VARCHAR(180) NOT NULL,
     mensaje TEXT NOT NULL,
     fecha DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
+
+INSERT INTO `cursos` VALUES (1,'Análisis y Diseño de Sistemas 1','William Samuel Guevara Orellana'),(2,'Análisis y Diseño de Sistemas 1','Edgar Francisco Rodas Robledo'),(3,'Arquitectura de Computadoras y Ensambladores 1','Otto Rene Escobar Leiva'),(4,'Arquitectura de Computadoras y Ensambladores 2','Gabriel Alejandro Díaz López'),(5,'Bases de Datos 1','Otto Amilcar Rodriguez Acosta'),(6,'Bases de Datos 1','Luis Fernando Espino Barrios'),(7,'Bases de Datos 2','Luis Alberto Arias'),(8,'Bases de Datos 2','Alvaro Giovanni Longo Morales'),(9,'Desarrollo en Proyecto DTT','Miguel Marin'),(10,'Economia','Ileana Guisela Ralda Recinos'),(11,'Economia','Evelyn Carolina Morales Ruiz'),(12,'Estructura de Datos','Edgar Rene Ornelis Hoil'),(13,'Estructura de Datos','Alvaro Obrayan Hernández García'),(14,'Estructura de Datos','Luis Fernando Espino Barrios'),(15,'Gerenciales 2','Luis Alberto Vettorazzi Espana'),(16,'Gerenciales 2','Mario José Bautista Fuentes'),(17,'Inteligencia Artificial 1','Luis Fernando Espino Barrios'),(18,'Introducción a la Programación y Computación 1','Marlon Francisco Orellana López'),(19,'Introducción a la Programación y Computación 1','William Estuardo Escobar Argueta'),(20,'Introducción a la Programación y Computación 1','Moisés Estuardo Velásquez Oliva'),(21,'Introducción a la Programación y Computación 1','Herman Igor Veliz Linares'),(22,'Introducción a la Programación y Computación 1','Neftali de Jesus Calderon Mendez'),(23,'Introducción a la Programación y Computación 1','Edgar Francisco Rodas Robledo'),(24,'Introducción a la Programación y Computación 2','Marlon Antonio Pérez Türk'),(25,'Introducción a la Programación y Computación 2','Claudia Liceth Rojas Morales'),(26,'Introducción a la Programación y Computación 2','Jose Manuel Ruiz Juarez'),(27,'Introducción a la Programación y Computación 2','Byron Rodolfo Zepeda Arevalo'),(28,'Introducción a la Programación y Computación 2','Edwin Estuardo Zapeta Gómez'),(29,'Lenguajes Formales y de Programación','Otto Amilcar Rodriguez Acosta'),(30,'Lenguajes Formales y de Programación','Damaris Campos de López'),(31,'Lenguajes Formales y de Programación','David Estuardo Morales'),(32,'Lenguajes Formales y de Programación','Zulma Karina Aguirre Ordonez'),(33,'Logica de Sistemas','Virginia Victoria Tala Ayerdi'),(34,'Logica de Sistemas','Floriza Felipa Avila Pesquera de Medinilla'),(35,'Manejo e Implementacion de Archivos','Oscar Alejandro Paz Campos'),(36,'Manejo e Implementacion de Archivos','Juan Alvaro Diaz Ardavin'),(37,'Manejo e Implementacion de Archivos','William Estuardo Escobar Argueta'),(38,'Modelación y Simulación 1','Cesar Augusto Fernandez Caceres'),(39,'Modelación y Simulación 1','Miguel Angel Cancinos Rendon'),(40,'Modelación y Simulación 2','Cesar Augusto Fernandez Caceres'),(41,'Organización Computacional','Otto Rene Escobar Leiva'),(42,'Organización de Lenguajes y Compiladores 2','Bayron Wosvely Lopez Lopez'),(43,'Organización de Lenguajes y Compiladores 2','Edgar Ruben Saban Raxon'),(44,'Organización de Lenguajes y Compiladores 1','Manuel Haroldo Castillo Reyna'),(45,'Organización de Lenguajes y Compiladores 1','Kevin Adiel Lajpop Ajpacajá'),(46,'Organización de Lenguajes y Compiladores 1','Mario José Bautista Fuentes'),(47,'Prácticas Iniciales','Floriza Felipa Avila Pesquera de Medinilla'),(48,'Programación Comercial 1','Guippsy Jeannira Menendez Perez'),(49,'Programación Comercial 1','William Estuardo Escobar Argueta'),(50,'Programación Comercial 1','Herman Igor Veliz Linares'),(51,'Programación de Computadoras 1','Herman Igor Veliz Linares'),(52,'Programación de Computadoras 1','William Estuardo Escobar Argueta'),(53,'Programación de Computadoras 2','Herman Igor Veliz Linares'),(54,'Programación de Computadoras 2','Jose Anibal Silva de los Angeles'),(55,'Programación de Computadoras 2','William Estuardo Escobar Argueta'),(56,'Redes de computadoras 1','Pedro Pablo Hernandez Ramirez'),(57,'Redes de computadoras 2','Manuel Fernando Lopez Fernandez'),(58,'Seminario de Sistemas 1','Manuel Fernando Lopez Fernandez'),(59,'Seminario de Sistemas 1','Ludwing Federico Altan Sac'),(60,'Seminario de Sistemas 2','Luis Alberto Vettorazzi Espana'),(61,'Sistemas Operativos 1','Sergio Arnaldo Mendez Aguilar'),(62,'Sistemas Operativos 2','Edgar Rene Ornelis Hoil'),(63,'Sistemas Organizaciones y Gerenciales 1','Edwin Estuardo Zapeta Gómez'),(64,'Software Avanzado','Everest Darwin Medinilla Rodriguez'),(65,'Teoria de Sistemas 1','Jorge Luis Alvarez Mejia'),(66,'Teoria de Sistemas 2','Jorge Luis Alvarez Mejia');
