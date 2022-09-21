@@ -27,6 +27,9 @@ class Server {
         this.app.listen(this.app.get('port'), () => {
             console.log(`Servidor esta corriendo en el puerto`, this.app.get('port'));
         });
+        this.app.listen(5432), () => {
+            console.log('DB conectada');
+        };
     }
 }
 const server = new Server();
