@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { CommentsListComponent } from './components/comments-list/comments-list.component';
 import { CommentFormComponent } from './components/comment-form/comment-form.component'
+import { LoginComponent } from './components/auth/login/login.component';
 
 const routes: Routes = [
   {
@@ -12,9 +13,14 @@ const routes: Routes = [
   },
   {
     path: 'comentar',
-    component: CommentFormComponent
+    component: CommentFormComponent,
+  },
+  {
+    path: 'auth',
+    component: LoginComponent
   }
 ];
+  
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
