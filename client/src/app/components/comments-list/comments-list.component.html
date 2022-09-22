@@ -1,7 +1,11 @@
-<div class="card mb-3" *ngFor="let comment of comments">
-    <div class="card-body">
-      <h5 class="card-title">{{comment.cuOca}}</h5>
+<div class="card bg-light mb-3" *ngFor="let comment of comments">
+  <p class="card-text" style="text-align:right"><small class="text-muted">{{comment.user}}</small></p>
+  <div class="card-header">
+      <h4 class="card-title">{{comment.cuOca}}</h4>
+    </div>
+  <div class="card-body">
       <p class="card-text">{{comment.mensaje}}</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <p class="card-text"><small class="text-muted">{{comment.fecha | date: 'hh:mm:ss | yyyy-MM-dd'}}</small></p>
+      <a class="btn btn-success right">Comentar</a>
     </div>
   </div>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { CommentsService } from '../../services/comments.service';
+import { Comment } from 'src/app/models/CommentsInterface'
 
 @Component({
   selector: 'app-comments-list',
@@ -7,6 +8,8 @@ import { CommentsService } from '../../services/comments.service';
   styleUrls: ['./comments-list.component.css']
 })
 export class CommentsListComponent implements OnInit {
+  
+  @HostBinding('class') classes = 'row';
   
   comments: any = [];
 
@@ -19,10 +22,10 @@ export class CommentsListComponent implements OnInit {
   getList() {
     this.commentsService.getList()
       .subscribe(
-        (res: any) => {
+        res => {
           this.comments = res;
         },
-        (err: any) => console.error(err)
+        err => console.error(err)
       );
   }
 
