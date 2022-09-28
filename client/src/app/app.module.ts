@@ -11,6 +11,8 @@ import { CommentsListComponent } from './components/comments-list/comments-list.
 
 import { CommentsService } from './services/comments.service';
 import { LoginComponent } from './components/auth/login/login.component';
+import { CommentPComponent } from './components/comment-p/comment-p.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { LoginComponent } from './components/auth/login/login.component';
     NavigationComponent,
     CommentFormComponent,
     CommentsListComponent,
-    LoginComponent
+    LoginComponent,
+    CommentPComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

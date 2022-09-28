@@ -1,0 +1,10 @@
+<div class="card bg-light mb-3" *ngFor="let comment of comments">
+    <p class="card-text" style="text-align:right"><small class="text-muted">{{comment.user}}</small></p>
+    <div class="card-header">
+        <h4 class="card-title">{{comment.cuOca}}</h4>
+      </div>
+    <div class="card-body">
+        <p class="card-text">{{comment.mensaje}}</p>
+        <p class="card-text"><small class="text-muted">{{comment.fecha | date: 'hh:mm:ss | dd/MM/yyyy'}}</small></p>
+      </div>
+    </div>

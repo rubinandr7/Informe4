@@ -3,11 +3,11 @@
     <h5>Usuario</h5>
   </div>
   <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" id="inlineRadio1" value="+0" [(ngModel)]="comment.tipo" name="inlineRadioOptions">
+    <input class="form-check-input" type="radio" id="inlineRadio1" value="0" [(ngModel)]="comment.tipo" name="inlineRadioOptions">
     <label class="form-check-label" for="inlineRadio1">Curso</label>
   </div>
   <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" id="inlineRadio2" value="+1" [(ngModel)]="comment.tipo"  name="inlineRadioOptions">
+    <input class="form-check-input" type="radio" id="inlineRadio2" value="1" [(ngModel)]="comment.tipo"  name="inlineRadioOptions">
     <label class="form-check-label" for="inlineRadio2">Catedrático</label>
   </div>
   <div class="form-floating mb-3">
@@ -18,6 +18,6 @@
     <textarea class="form-control" placeholder="Comentario" id="floatingTextarea" style="height: 100px" [(ngModel)]="comment.mensaje" name="msj"></textarea>
     <label for="floatingTextarea2">Comentario</label>
   </div>
-  <button class="btn btn-primary" (click)="saveNewComment()">Comentar
+  <button class="btn btn-primary" (click)="commentp ? saveNewCommentP() : saveNewComment()">Comentar
   </button>
 </form>

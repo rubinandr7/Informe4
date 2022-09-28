@@ -20,17 +20,23 @@ export class CommentFormComponent implements OnInit {
     tipo: 0
   }
 
-  edit: boolean = false;
-
-  
+  commentp: boolean = false;
 
   constructor(private commentsService: CommentsService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-  }
-
-  algo() {
-    console.log('todo fine');
+    const params = this.activatedRoute.snapshot.params;
+    if (params) {
+      this.commentsService.getPublicacion(params['cuOca'])
+        .subscribe(
+          res => {
+            console.log(res);
+            //this.comment['cuOca'] = res;
+            this.commentp = true;
+          },
+          err => console.log(err)
+        )
+    }
   }
 
   saveNewComment() {
@@ -39,7 +45,20 @@ export class CommentFormComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res);
-          //this.router.navigate(['/home']);
+          this.router.navigate(['/home']);
+        },
+        err => console.error(err)
+      )
+  }
+
+  saveNewCommentP(){
+    const params = this.activatedRoute.snapshot.params;
+    delete this.comment.fecha;
+    this.commentsService.saveCommentP(params['cuOca'], this.comment)
+      .subscribe(
+        res => {
+          console.log(res);
+          this.router.navigate(['/home']);
         },
         err => console.error(err)
       )
