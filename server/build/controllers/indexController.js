@@ -53,5 +53,25 @@ class IndexController {
             res.json(publicaciones);
         });
     }
+    getCommentsP(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { cuOca } = req.params;
+            const publicaciones = yield database_1.default.query('SELECT * FROM comentarios WHERE cuOca = ?', [cuOca]);
+            res.json(publicaciones);
+        });
+    }
+    createCommentP(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const nPublicacion = yield database_1.default.query('INSERT INTO comentarios set ?', [req.body]);
+            res.json({ text: 'nuevo comentario' });
+        });
+    }
+    getPublicacion(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { cuOca } = req.params;
+            const publicaciones = yield database_1.default.query('SELECT * FROM publicaciones WHERE cuOca = ?', [cuOca]);
+            res.json(publicaciones);
+        });
+    }
 }
 exports.indexController = new IndexController;

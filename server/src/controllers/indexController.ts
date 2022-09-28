@@ -36,6 +36,23 @@ class IndexController {
         res.json(publicaciones);
     }
 
+    public async getCommentsP(req: Request, res: Response){
+        const { cuOca } = req.params;
+        const publicaciones = await pool.query('SELECT * FROM comentarios WHERE cuOca = ?', [cuOca]);
+        res.json(publicaciones);
+    }
+
+    public async createCommentP(req: Request, res: Response): Promise<void> {
+        const nPublicacion = await pool.query('INSERT INTO comentarios set ?', [req.body]);
+        res.json({text: 'nuevo comentario'});
+    }
+
+    public async getPublicacion(req: Request, res: Response){
+        const { cuOca } = req.params;
+        const publicaciones = await pool.query('SELECT * FROM publicaciones WHERE cuOca = ?', [cuOca]);
+        res.json(publicaciones);
+    }
+
 }
 
 export const indexController = new IndexController;

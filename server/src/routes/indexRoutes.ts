@@ -10,11 +10,14 @@ class IndexRoutes {
 
     config(): void {
         this.router.get('/home', indexController.getList);
-        this.router.post('/nuevoComentario', indexController.createComment);
+        this.router.post('/nuevaPublicacion', indexController.createComment);
         this.router.get('/cursos', indexController.getCursos);
         this.router.get('/catedraticos', indexController.getCatedraticos);
         this.router.get('/curso/:curso', indexController.getCurso);
         this.router.get('/catedratico/:catedratico', indexController.getCatedratico);
+        this.router.get('/comentarios/:cuOca', indexController.getCommentsP);
+        this.router.post('/nuevoComentario/:cuOca', indexController.createCommentP);
+        this.router.get('/publicacion/:cuOca', indexController.getPublicacion);
     }
 }
 
