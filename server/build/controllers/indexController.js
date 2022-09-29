@@ -21,22 +21,10 @@ class IndexController {
             res.json(publicaciones);
         });
     }
-    getListC(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const publicaciones = yield database_1.default.query('SELECT * FROM cursosap');
-            res.json(publicaciones);
-        });
-    }
     createComment(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const nPublicacion = yield database_1.default.query('INSERT INTO publicaciones set ?', [req.body]);
             res.json({ text: 'nueva pblicacion creada' });
-        });
-    }
-    createCursoA(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const nPublicacion = yield database_1.default.query('INSERT INTO cursosap set ?', [req.body]);
-            res.json({ text: 'nuevo curso agregado' });
         });
     }
     getCursos(req, res) {
@@ -83,6 +71,18 @@ class IndexController {
             const { cuOca } = req.params;
             const publicaciones = yield database_1.default.query('SELECT * FROM publicaciones WHERE cuOca = ?', [cuOca]);
             res.json(publicaciones);
+        });
+    }
+    createUsuarios(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const usuarios = yield database_1.default.query('INSERT INTO usuarios set ?', [req.body]);
+            res.json({ text: 'nuevo usuario creado' });
+        });
+    }
+    getCursos(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const usuarios = yield database_1.default.query('SELECT * FROM usuarios WHERE tipo = ?', [0]);
+            res.json(usuarios);
         });
     }
 }

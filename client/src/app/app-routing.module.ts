@@ -6,7 +6,8 @@ import { CommentFormComponent } from './components/comment-form/comment-form.com
 import { LoginComponent } from './components/auth/login/login.component';
 import { CommentPComponent } from './components/comment-p/comment-p.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
-import { AddFormComponent } from './components/add-form/add-form.component'
+import { RegisterComponent } from './components/auth/register/register.component';
+import { CursosComponent } from './components/curso/cursos.component';
 
 const routes: Routes = [
   {
@@ -19,8 +20,12 @@ const routes: Routes = [
     component: CommentFormComponent
   },
   {
-    path: 'auth',
+    path: 'auth/login',
     component: LoginComponent
+  },
+  {
+    path: 'auth/register',
+    component: RegisterComponent
   },
   {
     path: 'comentarP/:cuOca',
@@ -35,8 +40,8 @@ const routes: Routes = [
     component: PerfilComponent
   },
   {
-    path: 'agregar',
-    component: AddFormComponent
+    path: 'curso',
+    component: CursosComponent
   }
 ];
   

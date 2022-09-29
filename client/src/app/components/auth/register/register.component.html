@@ -1,6 +1,6 @@
-<div class="login">
+<div class="register">
   <form class="custom-form" method="post">
-    <h1>Iniciar sesion</h1>
+    <h1>Registrarse</h1>
     <input
       type="email"
       name="email"
@@ -13,8 +13,13 @@
       placeholder="Password"
       required="required"
     />
-    <button type="submit" (click)="login()">
-      <a href="http://localhost:4200/home">Iniciar sesion</a>
-    </button>
+    <input
+      type="password"
+      name="password"
+      placeholder="Repetir password"
+      required="required"
+    />
+    <button type="submit" (click)="register()">Registrarse</button>
+    
   </form>
 </div>

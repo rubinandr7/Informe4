@@ -9,19 +9,9 @@ class IndexController {
         res.json(publicaciones);
     }
 
-    public async getListC(req: Request, res: Response): Promise<void> {
-        const publicaciones = await pool.query('SELECT * FROM cursosap');
-        res.json(publicaciones);
-    }
-
     public async createComment(req: Request, res: Response): Promise<void> {
         const nPublicacion = await pool.query('INSERT INTO publicaciones set ?', [req.body]);
         res.json({text: 'nueva pblicacion creada'});
-    }
-
-    public async createCursoA(req: Request, res: Response): Promise<void> {
-        const nPublicacion = await pool.query('INSERT INTO cursosap set ?', [req.body]);
-        res.json({text: 'nuevo curso agregado'});
     }
 
     public async getCursos(req: Request, res: Response): Promise<any> {
@@ -63,6 +53,15 @@ class IndexController {
         res.json(publicaciones);
     }
 
+    public async createUsuarios(req: Request, res: Response): Promise<void> {
+        const usuarios = await pool.query('INSERT INTO usuarios set ?', [req.body]);
+        res.json({text: 'nuevo usuario creado'});
+    }
+
+    public async getUsuarios(req: Request, res: Response){
+        const usuarios = await pool.query('SELECT * FROM usuarios WHERE tipo = ?', [1]);
+        res.json(usuarios);
+    }
 }
 
 export const indexController = new IndexController;

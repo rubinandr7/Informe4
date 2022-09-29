@@ -13,7 +13,6 @@ import { CommentsService } from './services/comments.service';
 import { LoginComponent } from './components/auth/login/login.component';
 import { CommentPComponent } from './components/comment-p/comment-p.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
-import { AddFormComponent } from './components/add-form/add-form.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { AddFormComponent } from './components/add-form/add-form.component';
     CommentsListComponent,
     LoginComponent,
     CommentPComponent,
-    PerfilComponent,
-    AddFormComponent
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

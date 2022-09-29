@@ -18,8 +18,8 @@ class IndexRoutes {
         this.router.get('/comentarios/:cuOca', indexController.getCommentsP);
         this.router.post('/nuevoComentario/:cuOca', indexController.createCommentP);
         this.router.get('/publicacion/:cuOca', indexController.getPublicacion);
-        this.router.get('/cursosAprobados', indexController.getListC);
-        this.router.post('/agregarCurso', indexController.createCursoA);
+        this.router.get('/auth/login',indexController.getUsuarios);
+        this.router.get('/auth/register',indexController.createUsuarios);
     }
 }
 

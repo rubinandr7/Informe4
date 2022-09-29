@@ -17,8 +17,8 @@ class IndexRoutes {
         this.router.get('/comentarios/:cuOca', indexController_1.indexController.getCommentsP);
         this.router.post('/nuevoComentario/:cuOca', indexController_1.indexController.createCommentP);
         this.router.get('/publicacion/:cuOca', indexController_1.indexController.getPublicacion);
-        this.router.get('/cursosAprobados', indexController_1.indexController.getListC);
-        this.router.post('/agregarCurso', indexController_1.indexController.createCursoA);
+        this.router.get('/auth/login',indexController_1.indexController.getUsuarios);
+        this.router.get('/auth/register',indexController_1.indexController.createUsuarios);
     }
 }
 const indexRoutes = new IndexRoutes();
