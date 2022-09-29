@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Comment } from '../models/CommentsInterface';
+import { Curso } from '../models/CursosInterface';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,14 @@ export class CommentsService {
 
   getPublicacion(cuOca: string): any {
     return this.http.get(`${this.API_URI}/publicacion/${cuOca}`);
+  }
+
+  getListC(): any {
+    return this.http.get(`${this.API_URI}/cursosAprobados`);
+  }
+
+  saveCursoA(curso: Curso){
+    return this.http.post(`${this.API_URI}/agregarCurso`, curso);
   }
 
 }

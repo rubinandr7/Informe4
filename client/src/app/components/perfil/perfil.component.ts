@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { CommentsService } from '../../services/comments.service';
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  @HostBinding('class') classes = 'row';
+  
+  cursos: any = [];
+
+  constructor(private commentsService: CommentsService) { }
 
   ngOnInit(): void {
+    this.getListC();
+  }
+
+  getListC() {
+    this.commentsService.getListC()
+      .subscribe(
+        res => {
+          this.cursos = res;
+        },
+        err => console.error(err)
+      );
   }
 
 }

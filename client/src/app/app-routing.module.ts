@@ -6,6 +6,7 @@ import { CommentFormComponent } from './components/comment-form/comment-form.com
 import { LoginComponent } from './components/auth/login/login.component';
 import { CommentPComponent } from './components/comment-p/comment-p.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { AddFormComponent } from './components/add-form/add-form.component'
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: PerfilComponent
+  },
+  {
+    path: 'agregar',
+    component: AddFormComponent
   }
 ];
   

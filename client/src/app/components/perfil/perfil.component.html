@@ -1,1 +1,67 @@
-<p>perfil works!</p>
+<div class="row gutters-sm">
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex flex-column align-items-center text-center">
+            <img src="https://www.pngkey.com/png/full/202-2022332_formacin-usuario-remota-profile-icon-vector.png" alt="Admin" class="rounded-circle" width="150">
+            <div class="mt-3">
+              <h4>Usuario</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Nombre</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              Nombre
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Registro académico</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              Registro académico
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Correo electrónico</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              Correo electrónico
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="progress progress-info progress-striped">
+        <div class="bar" style="width: 100%"></div>
+      </div>
+      <div>
+        <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>Curso aprobado</th>
+                <th>Créditos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let curso of cursos">
+                <td>{{curso.curso}}</td>
+                <td>{{curso.creditos}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class="card-body">
+        <a [routerLink]="['/agregar']" class="btn btn-success right">Agregar</a>
+      </div>

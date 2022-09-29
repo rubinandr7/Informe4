@@ -21,10 +21,22 @@ class IndexController {
             res.json(publicaciones);
         });
     }
+    getListC(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const publicaciones = yield database_1.default.query('SELECT * FROM cursosap');
+            res.json(publicaciones);
+        });
+    }
     createComment(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const nPublicacion = yield database_1.default.query('INSERT INTO publicaciones set ?', [req.body]);
             res.json({ text: 'nueva pblicacion creada' });
+        });
+    }
+    createCursoA(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const nPublicacion = yield database_1.default.query('INSERT INTO cursosap set ?', [req.body]);
+            res.json({ text: 'nuevo curso agregado' });
         });
     }
     getCursos(req, res) {
